@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Programmation Orienté Objet</title>
+</head>
+<body>
+    <script>
+        /*
+        var maFonction=function(){
+            alert("attribut : "+this.attribut);
+        }
+        maFonction();  //Affiche la valeur undefined
+
+        //Création de l'objet obj1 et affectation de maFonction
+        var obj1={
+            attribut:"valeur1",
+            methode:maFonction
+        }
+        obj1.methode();//Affiche la valeur de l'attribut, à savoir valeur1
+        */
+
+
+        /////////Création  d'objet
+        //////////////Structure Simple
+        /*
+        function MaClasse(parametre1,parametre2){
+            this.attribut1=parametre1;
+            this.attribut2=parametre2;
+            this.methode=function(){
+                alert("Attributs : " +this.attribut1+", "+this.attribut2);
+            }
+        }
+        var obj=new MaClasse("valeur1", "valeur2");
+        alert("Attribut1 : "+obj.attribut1);//Affiche la valeur de l'attribut attribut1
+        obj.methode();//Affiche la chaine de caractères contenant les valeurs des attributs
+        */
+
+        function MaClasse(parametre1,parametre2){
+            this.attribut1=parametre1;
+            this.attribut2=parametre2;
+        }
+        MaClasse.prototype={
+            methode:function(){
+                alert("Attributs: "+this.attribut1+", "+this.attribut2);
+            }
+        }
+        var obj=new MaClasse("valeur1", "valeur2");
+        alert("Attribut1 : "+obj.attribut1);//Affiche la velaur de l'attribut attribut1
+        obj.methode();//Affiche la chaine de caractère contenant les valeurs des attributs
+
+
+
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>

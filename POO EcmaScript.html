@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Définition d'une classe Voiture
+        class Voiture{
+
+            //Méthode condtructeur
+            constructor(marque, modele, pays){
+                this.marque=marque;
+                this.modele=modele;
+                this.pays=pays;
+            }
+
+            //Méthode getter
+            get getMarque(){
+                return this.marque;
+            }
+
+            get getModele(){
+                return this.modele;
+            }
+
+            get getPays(){
+                return this.pays;
+            }
+
+            //Setters
+            set setModele(value){
+                this.modele=value;
+            }
+
+     
+            //Méthode afficherVoiture
+            afficherVoiture(){
+                return "Marque : "+this.marque
+                +"<br/> Modèle : "+this.modele
+                +"<br/> Pays : "+this.pays +"<br/>";
+            }
+
+                   //Méthode statique comptant le nombre d'objet créés
+            static getNombreVoitures(){
+                if(!this.compteurVoitures && this.compteurVoitures !==0){
+                    this.compteurVoitures = 0;
+                }
+                else {
+                    this.compteurVoitures++;
+                }
+                return this.compteurVoitures+1;
+            }
+        }
+
+        //Instanciation d'un objet simca1100 de la classe Voiture
+        let simca1100=new Voiture("Simca", "1100", "France");
+        let porche991=new Voiture("Porche","911","Allemagne");
+
+
+
+        //Appel de la méthode afficherVoiture de la classe Voiture
+        document.write(simca1100.afficherVoiture());
+        document.write("Nombre de voitures instanciées : " +Voiture.getNombreVoitures()+ "<br/>");
+        document.write("Marque : " +porche991.getMarque + "<br/>");
+        document.write("Modèle : " +porche991.getModele + "<br/>");
+        document.write("Pays : " +porche991.getPays + "<br/>");
+        document.write("Nombre de voitures instanciées : " +Voiture.getNombreVoitures()+ "<br/>");
+
+
+        //Modification de l'objet porche911
+        porche991.setModele="911 Turbo";
+        document.write("Modèle (après la modification ): " +porche991.getModele + "<br/><br/>");
+
+        //Instancier d'un objet testarossa de la classe voiture
+        let testarossa=new Voiture("Ferrari", "Testarossa","Italie");
+        document.write("Marque : "+testarossa.getMarque+"<br/>");
+        document.write("Modéle : "+testarossa.getModele+"<br/>");
+        document.write("Pays : "+testarossa.getPays+"<br/>");
+        document.write("Nombre de voitures instanciées : "+Voiture.getNombreVoitures()+"<br/><br/>");
+
+
+
+
+
+        //Héritage en EcmaScript
+        /////Définition d'une classe VoitureSport extension de la classe Voiture
+        class VoitureSport extends Voiture{
+            //Constructeur
+            constructor(marque, modele, pays, vitessemaxi){
+                //héritage des attributs
+                super(marque, modele, pays);
+                //attribut spécifique de la classe voituresport
+                this.vitessemaxi=vitessemaxi;
+
+            }
+
+            //méthode afficherVoitureSport
+            afficherVoitureSport(){
+                return super.afficherVoiture()+"<br/>Vitesse maximale : "+this.vitessemaxi;
+
+            }
+        }
+
+        //Arrow Functions
+        var tabVoituresSport = ["Porsche", "Ferrari", "BMW"];
+        /////Boucle d'Affichage de 3 marques préférées
+        /////////Utilisation de forEach
+        document.write("<br/> Boucle d'affichage de 3 marques préférées");
+        document.write(" (utilisation de ForEach sans notation =>) : <br/>");
+        tabVoituresSport.forEach(function(marque){
+            document.write("Marque : "+marque+"<br/>");
+        })
+
+        /////Boucle d'Affichage de 3 marques préférées
+        /////////Utilisation de forEach avec notation =>
+        document.write("<br/> Boucle d'affichage de 3 marques préférées");
+        document.write(" (utilisation de ForEach avec notation =>) : <br/>");
+        tabVoituresSport.forEach(marque=>{
+            document.write("Marque : "+marque+"<br/>");
+        })
+
+        ///Définition d'un objet javascript de voitures de sport
+        //////sans arrow function
+        var objVoituresSport1={
+            marque:["Porsche", "Ferrari", "BMW"],
+            genre:"Voitures de sport",
+            afficherVoitures:function(){
+                var self=this;
+                this.marque.forEach(function(marque){
+                    document.write("Marque : "+marque+ " - ");
+                    document.write("Genre : "+self.genre+"<br/>");
+                })
+            }
+        };
+        //Affichage des marques via la methode afficherVoitures
+        document.write("<br/> Boucles d'affichage de 3 marques préférées ");
+        document.write(" avec leur genre (ForEach sans notation =>) : <br/>");
+        objVoituresSport1.afficherVoitures();
+
+        
+        ///Définition d'un objet javascript de voitures de sport
+        //////avec arrow function
+        var objVoituresSport2={
+            marque:['Porsche', 'Ferrari', 'BMW'],
+            genre:'Voitures de sport',
+            afficherVoitures:function(){
+                this.marque.forEach((marque) => {
+                    document.write("Marque : "+marque+" - ");
+                    document.write("Genre : "+this.genre+"<br/>");
+
+                })
+            }
+        }
+
+        //Affichage des marques via afficherVoitures
+        document.write("<br/> Boucle d'affichage de trois marques préférées");
+        document.write(" avec leur genre (ForEach avec notation =>) : <br/>");
+        objVoituresSport2.afficherVoitures();
+
+        //définition d'un tableau Javascript de voitures
+        let tabVoitures=new Array("Porsche", "Ferrari", "BMW");
+
+        //L'ajout d'une 4eme voiture
+        tabVoitures.push("Simca");
+
+        //Affichage des marques du tabVoiture via for
+        document.write("<br/><br/>Marques du tableau tabVoitures (via for) : <br/>");
+        for(i=0; i<tabVoitures.length; i++){
+            document.write(tabVoitures[i]+ "<br/>");
+        }
+
+        //Affichage des marques du tableau tabVoitures via for of
+        document.write("<br/>Marques du tableau tabVoitures");
+        document.write(" (via for of) :<br/>");
+        for(let marque of tabVoitures){
+            document.write(marque+"<br/>");
+        }
+
+        //Définition d'un Map JavaScript de voitures
+        //(code en tant que clé, libelle en tant que valeur)
+        let MapVoitures=new Map([["porsche911","Porsche911"],
+                                 ["testarossa","Ferrari Testarossa"],
+                                 ["bmwm5","BMW M5"]
+                                 ]
+        );
+
+        //Ajout de la 4eme voiture
+        MapVoitures.set("simaca1100","Simaca 1100");
+
+       //Affichage des voitures(code uniquement) du Map MapVoitures
+       document.write("<br/>Clés du Map mapVoitures : <br/>");
+       
+       for(let cle of MapVoitures.keys()){
+           document.write("Code voiture : "+ cle +"<br/>");
+       } 
+
+       //Affichage des voitures(libelle uniquement) du Map MapVoitures
+       document.write("<br/>Valeurs (libelle) du Map MapVoitures : <br/>");
+       for(let valeur of MapVoitures.values()){
+           document.write("Libellé voiture : "+valeur+"<br/>");
+       }
+
+       //Affichage des voitures (code, libelle) du Map MapVoitures
+       //(via entries en tant qu'itérable)
+       document.write("<br/>");
+       document.write("Voiture du Map Mapvoitures");
+       document.write(" (via entries en tant qu'étirable) : ");
+       document.write("<br/>");
+       for(let voiture of MapVoitures.entries()){
+           document.write(voiture[0]+" - "+ voiture[1] + "<br/>");
+       }
+
+
+       //Affichage des voitures (code, libelle) du Map MapVoitures
+       //(via entries destructuré)
+       document.write("<br/>");
+       document.write("Voitures du Map MapVoitures");
+       document.write(" (via entries destructures) :");
+       document.write("<br/>");
+       for(let [clé, valeur] of MapVoitures.entries()){
+           document.write(clé +" - "+valeur+"<br/>");
+       }
+
+       /////////////////Déstructuration
+       //Définition d'un tableau JavaScript de marques de voitures de sport
+       let marquesVoituresSport=["Porsche","Ferrari","BMW"];
+
+       //Premier destructuring du tableau JavaScript marquesVoituresSport
+       //en variable mémoire
+       let [marque1, marque2,marque3]=marquesVoituresSport;
+       //Affichage de contrôle
+       document.write("<br/>");
+       document.write("Marque n°1 : "+marque1+"<br/>");
+       document.write("Marque n°2 : "+marque2+"<br/>");
+       document.write("Marque n°3 : "+marque3+"<br/>");
+       document.write("<br/>");
+
+
+       //////////////////////////////Les promesses
+       let p=new Promise(function(resolve, reject){resolve(1);})
+       p.then(function(valeur){console.log("étape 1 : "+valeur);
+       return valeur+1;})
+       .then(function(valeur){console.log("étape 2 : "+valeur);});
+
+       let p1=new Promise((resolve, reject)=>resolve(1));
+       p1.then((valeur)=>{ console.log("étape 1 : " + valeur); return valeur+1; })
+       .then((valeur)=>console.log("étape 2: "+valeur));
+
+    
+
+
+
+
+    
+    </script>
+</body>
+</html>

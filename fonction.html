@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test Fonction</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+function findMax(){
+    
+    var i,max=0;
+    for(i=0;i<arguments.length;i++){
+        if(parseInt(arguments[i])>max){
+            max=arguments[i];
+        }    
+
+    }
+    return max;
+}
+var recupParam=prompt("Entrer des chiffres séparés par des virgules : ");
+
+var tab=recupParam.split(",");
+
+document.getElementById("demo").innerHTML=findMax.apply(this,tab);
+
+
+</script>
+</body>
+</html>

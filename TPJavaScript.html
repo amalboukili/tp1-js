@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+/*
+var var_chaine="une chaine de caractère";
+var var_numeric=1981;
+var var_boolean=true;
+
+alert("type : var_chaine est : " +typeof(var_chaine));
+alert("type : var_numeric est : "+typeof(var_numeric));
+alert("type : var_boolean est : "+typeof(var_boolean));
+*/
+
+/*
+var var_globale="globale";
+var test;
+function locale(){
+    var var_local="locale";
+    var_globale="globale modifié";
+    return var_local;
+}
+test=locale();
+
+function test_var(){
+    alert(var_globale);
+    alert(test);
+    alert("la valeur local : "+typeof(var_local));
+}
+test1= test_var();
+*/
+
+/*
+var tab=[true, 2,5,"d","2m","c"];// declaration et initialisation d'un tableau
+alert(tab.join("|")); //affiche sous la forme de String: true|2|5|d|2m|c
+*/
+
+/*
+var tab=[1,2];
+var tab1=[3,4];
+var tab2=[4,6];
+
+alert(tab.concat(tab1, tab2)); // Récupére sous la forme String : 1,2,3,4
+*/
+
+/*
+var tab=[1,2,4,7];
+alert(tab.shift()); //Affiche le premier élément du tableau puis le supprimer du tableau: 1
+alert(tab);// récupère les élément du tablant apès la modification
+alert(tab.pop());//supprime le dernier élément qui va l'afficher : 7
+alert(tab);//Affiche les élément du tableau après la modification
+*/
+
+/*
+var tab=[1,2,4,7];
+alert(tab.unshift(0,9));//Affiche la langueur du tableau après l'ajout des nouveaux éléments
+alert(tab);
+alert(tab.push(23,12));// ajoute deux éléments à la fin du tableau puis affiche la nouvelle langueur
+alert(tab);
+*/
+
+
+////////////////// inserer modifier ou supprimer dans un tableau
+/*
+// Modification
+var tab =[1,2,3,4,5];
+alert(tab.splice(1,2,"a","b"));// Affiche les deux élément à partir de la position 1(2eme position) puis les modédifié par a et b
+alert(tab); // Affiche le nouveau tableau
+*/
+
+/*
+//Supression
+var tab =[1,2,3,4,5];
+alert(tab.splice(1,2));// supprime deux éléments à partir de la position 1
+alert(tab);//Affiche 1,4,5
+// Ajout
+alert(tab.splice(1,0,"a","b"));// Affiche rien
+alert(tab);// Affiche 1,a,b,4,5
+//inverse l'ordre des éléments du tableau
+tab.reverse();
+alert(tab);
+tab.sort();
+alert(tab);// Affiche 1,4,5,a,b
+*/
+
+/*
+var etudiant= new Array();
+etudiant[0]=["Ahmed", 12];
+etudiant[1]=["Anas",15.5];
+etudiant[2]=["Samira",13];
+etudiant[3]=["Fatima", 17];
+etudiant[4]=["Idris",9];
+
+var total=0;
+for(var i=0; i<etudiant.length; i++){
+    total+=parseFloat(etudiant[i][1]);
+    document.write("la moyenne de "+etudiant[i][0]+ " est : <b>" +etudiant[i][1]+ "</b><br/>");
+}
+var moy=total/i;
+document.write("<br/>La moyenne de la classe est : <b>"+moy+"</b>");
+*/
+
+///////////// Expressions régulières////////////
+/*
+var cin_format=/^[a-zA-Z]{1,2}[0-9]{2,10}$/gi;
+var saisieCIN= prompt("Saisissez votre CIN : ");
+alert(cin_format.test(saisieCIN));
+
+var DATE_format = /^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.\/-_]([0]?[1-9]|[1][0-2])[.\/-_]([0-9]{4}|[0-9]{2})$/;
+var saisieDATE=prompt("Saisissez votre date de naissance : ");
+alert(DATE_format.test(saisieDATE));
+
+var EMAIL_format=/^[a-zA-Z0-9.-_]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+var saisieEMAIL=prompt("Saisissez votre Email : ");
+alert(EMAIL_format.test(saisieEMAIL));
+
+var TEL_format=/^[0]?[6][0-9][1-9]|[5][2|3][0-9]?\d{6}$/gi;
+var saisieTEL=prompt("Saisissez votre Tel : ");
+alert(TEL_format.test(saisieTEL));
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+
+    
+</body>
+</html>
